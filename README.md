@@ -1,4 +1,4 @@
-# Interior Haven - Modern Furniture E-commerce Website
+# Nereus Interior - Modern Furniture E-commerce Website
 
 A fully functional e-commerce website for an interior furniture store, built with HTML, CSS, and vanilla JavaScript.
 
