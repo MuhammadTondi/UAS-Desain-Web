@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nereus Interior - Modern Furniture Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">Nereus Interior</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="search-icon">
+                        <a href="#" title="Search">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="cart-icon">
+                        <a href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="profile-icon">
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 data-i18n="hero.title">Design Your Dream Space</h1>
+                    <p data-i18n="hero.subtitle">Discover our collection of premium furniture pieces that will transform your home into a haven of comfort and style.</p>
+                    <a href="shop.html" class="btn" data-i18n="hero.cta">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <div class="product-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2 data-i18n="newsletter.title">Subscribe to Our Newsletter</h2>
+                    <p data-i18n="newsletter.subtitle">Stay updated with our latest collections and exclusive offers.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" data-i18n-placeholder="newsletter.placeholder" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn" data-i18n="newsletter.button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contactUs">Contact Us</h3>
+                    <p>Email: mhdtondialkafiitarigan@gmail.com</p>
+                    <p>Phone: 0823-0001-0002</p>
+                    <p>Address: Medan Helvetia, Kota Medan, Indonesia</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.followUs">Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/alkfiitrg" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Nereus Interior by Tondi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        // Load featured products (first 4 products)
+        document.addEventListener('DOMContentLoaded', () => {
+            const featuredProducts = products.slice(0, 4);
+            const productGrid = document.querySelector('.featured-products .product-grid');
+            if (productGrid) {
+                productGrid.innerHTML = featuredProducts.map(product => `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-price">${formatPrice(product.price)}</p>
+                            <button class="btn" onclick="addToCart(${product.id})" data-i18n="product.addToCart">Add to Cart</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Newsletter form submission
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = newsletterForm.querySelector('input[type="email"]').value;
+                    showNotification('Thank you for subscribing!');
+                    newsletterForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

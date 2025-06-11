@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nereus Interior</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">Nereus Interior</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="search-icon">
+                        <a href="#" title="Search">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="cart-icon">
+                        <a href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="profile-icon">
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="contact-section">
+                <h1 data-i18n="contact.title">Contact Us</h1>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3 data-i18n="contact.address.title">Our Location</h3>
+                            <p data-i18n="contact.address.text">Medan Helvetia, Kota Medan, Indonesia</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <h3 data-i18n="contact.phone.title">Phone Number</h3>
+                            <p>0823-0001-0002</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3 data-i18n="contact.email.title">Email Address</h3>
+                            <p>mhdtondialkafiitarigan@gmail.com</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <h3 data-i18n="contact.hours.title">Business Hours</h3>
+                            <p data-i18n="contact.hours.text">Monday - Saturday: 9:00 AM - 8:00 PM</p>
+                            <p data-i18n="contact.hours.sunday">Sunday: 10:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h2 data-i18n="contact.form.title">Send Us a Message</h2>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name" data-i18n="contact.form.name">Full Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.form.email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" data-i18n="contact.form.subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.form.message">Message</label>
+                                <textarea id="message" class="form-control" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" data-i18n="contact.form.submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contactUs">Contact Us</h3>
+                    <p>Email: mhdtondialkafiitarigan@gmail.com</p>
+                    <p>Phone: 0823-0001-0002</p>
+                    <p>Address: Medan Helvetia, Kota Medan, Indonesia</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.followUs">Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/alkfiitrg" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Nereus Interior by Tondi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get form values
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // Show success message
+                showNotification('Thank you for your message. We will get back to you soon!');
+                
+                // Reset form
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html> 

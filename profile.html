@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Nereus Interior</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">Nereus Interior</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="cart-icon">
+                        <a href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="profile-icon">
+                        <a href="profile.html" class="active">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="images/default-avatar.png" alt="Profile Picture" id="profile-picture">
+                        <div class="avatar-overlay">
+                            <label for="avatar-upload" class="upload-btn">
+                                <i class="fas fa-camera"></i>
+                            </label>
+                            <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                    <h1 data-i18n="profile.title">My Profile</h1>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-info">
+                        <h2 data-i18n="profile.personalInfo">Personal Information</h2>
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label for="fullname" data-i18n="profile.fullName">Full Name</label>
+                                <input type="text" id="fullname" class="form-control" value="John Doe">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" data-i18n="profile.email">Email Address</label>
+                                <input type="email" id="email" class="form-control" value="john.doe@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" data-i18n="profile.phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" value="+62 823-0001-0002">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address" data-i18n="profile.address">Address</label>
+                                <textarea id="address" class="form-control" rows="3">Medan Helvetia, Kota Medan, Indonesia</textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" data-i18n="profile.saveChanges">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="profile-settings">
+                        <h2 data-i18n="profile.settings">Settings</h2>
+                        <div class="settings-group">
+                            <h3 data-i18n="profile.notifications">Notifications</h3>
+                            <div class="setting-item">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <span data-i18n="profile.emailNotif">Email Notifications</span>
+                            </div>
+                            <div class="setting-item">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <span data-i18n="profile.orderUpdates">Order Updates</span>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3 data-i18n="profile.preferences">Preferences</h3>
+                            <div class="setting-item">
+                                <div class="language-switcher">
+                                    <button onclick="switchLanguage('en')" class="lang-btn">EN</button>
+                                    <button onclick="switchLanguage('id')" class="lang-btn">ID</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contactUs">Contact Us</h3>
+                    <p>Email: mhdtondialkafiitarigan@gmail.com</p>
+                    <p>Phone: 0823-0001-0002</p>
+                    <p>Address: Medan Helvetia, Kota Medan, Indonesia</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.followUs">Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/alkfiitrg" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Nereus Interior by Tondi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Handle profile picture upload
+            const avatarUpload = document.getElementById('avatar-upload');
+            const profilePicture = document.getElementById('profile-picture');
+
+            avatarUpload.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        profilePicture.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Handle form submission
+            const profileForm = document.getElementById('profile-form');
+            profileForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                showNotification('Profile updated successfully!');
+            });
+        });
+    </script>
+</body>
+</html>

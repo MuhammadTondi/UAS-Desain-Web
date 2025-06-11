@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Nereus Interior</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">Nereus Interior</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="search-icon">
+                        <a href="#" title="Search">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="cart-icon">
+                        <a href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="profile-icon">
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 data-i18n="shop.title">Our Collection</h1>
+            
+            <!-- Filters and Sort -->
+            <div class="shop-controls">
+                <div class="filters">
+                    <button class="btn-filter active" onclick="filterProducts('all')" data-i18n="shop.filters.all">All</button>
+                    <button class="btn-filter" onclick="filterProducts('Sofas')" data-i18n="shop.filters.sofas">Sofas</button>
+                    <button class="btn-filter" onclick="filterProducts('Tables')" data-i18n="shop.filters.tables">Tables</button>
+                    <button class="btn-filter" onclick="filterProducts('Chairs')" data-i18n="shop.filters.chairs">Chairs</button>
+                    <button class="btn-filter" onclick="filterProducts('Storage')" data-i18n="shop.filters.storage">Storage</button>
+                    <button class="btn-filter" onclick="filterProducts('Beds')" data-i18n="shop.filters.beds">Beds</button>
+                </div>
+                <div class="sort">
+                    <select class="form-control" onchange="sortProducts(this.value)">
+                        <option value="" data-i18n="shop.sort.placeholder">Sort by</option>
+                        <option value="price-low" data-i18n="shop.sort.priceLow">Price: Low to High</option>
+                        <option value="price-high" data-i18n="shop.sort.priceHigh">Price: High to Low</option>
+                        <option value="name" data-i18n="shop.sort.name">Name: A to Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contactUs">Contact Us</h3>
+                    <p>Email: mhdtondialkafiitarigan@gmail.com</p>
+                    <p>Phone: 0823-6015-2241</p>
+                    <p>Address: Medan Helvetia, Kota Medan, Indonesia</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.followUs">Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/alkfiitrg" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Nereus Interior by Tondi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        // Add active class to filter buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.btn-filter');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+
+            // Load all products
+            const productGrid = document.querySelector('.product-grid');
+            if (productGrid) {
+                productGrid.innerHTML = products.map(product => `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-price">${formatPrice(product.price)}</p>
+                            <button class="btn" onclick="addToCart(${product.id})" data-i18n="product.addToCart">Add to Cart</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html> 
